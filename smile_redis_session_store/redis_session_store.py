@@ -78,7 +78,10 @@ class RedisSessionStore(werkzeug.contrib.sessions.SessionStore):
         key = self._get_session_key(sid)
         data = self.redis.get(key)
         if data:
-            self.redis.setex(key, data, self.expire)
+            # We don't want the session to keep refreshing. It doesn't make much sense when
+            # the timeout is set to a week. We want the session to timeout one week from last
+            # login, not one week from last activity.
+            # self.redis.setex(key, data, self.expire)
             data = cPickle.loads(data)
         else:
             data = {}
