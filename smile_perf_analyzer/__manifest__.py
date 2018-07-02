@@ -63,7 +63,9 @@ corentin.pouhet-brunerie@smile.fr
     "demo": [
         "demo/ir.logging.perf.rule.csv",
     ],
+    # Set installable to False since the __init__.py for this module has been completely commented
+    # out to prevent the loading of unwanted monkeypatches.
     "auto_install": False,
-    "installable": True,
+    "installable": False,
     "application": False,
 }

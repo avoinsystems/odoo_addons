@@ -18,8 +18,9 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-
-from . import controllers
-from . import models
-from . import tools
-from . import wizard
+# Comment these out to prevent the loading of this module. This module contains a monkeypatch in
+# models/sql_db.py that will take effect even without installing the module.
+# from . import controllers
+# from . import models
+# from . import tools
+# from . import wizard

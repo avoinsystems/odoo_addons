@@ -70,7 +70,9 @@ Suggestions & Feedback to: corentin.pouhet-brunerie@smile.fr
         "static/src/xml/base.xml",
         "static/src/xml/env_ribbon.xml",
     ],
-    "auto_install": True,
-    "installable": True,
+    # Set installable and auto_install to False since the __init__.py for this module has been
+    # completely commented out to prevent the loading of unwanted monkeypatches.
+    "auto_install": False,
+    "installable": False,
     "application": False,
 }
